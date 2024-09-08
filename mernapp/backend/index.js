@@ -4,7 +4,8 @@ import connect_to_database from './db.js';
 
 import createuser from './Routes/Createuser.js';
 
-import displaydata from './Routes/DisplayData.js'
+import displaydata from './Routes/DisplayData.js';
+import orderdata from './Routes/OrderData.js';
 
 
 
@@ -31,8 +32,9 @@ app.use((req, res, next) => {
 
 
 app.use(express.json())
-app.use('/api', createuser)
-app.use('/api', displaydata)
+app.use('/api', createuser);
+app.use('/api', displaydata);
+app.use('/api', orderdata);
 // app.use('/api', require("./Routes/Createuser.js"))
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);

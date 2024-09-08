@@ -14,12 +14,12 @@ const connect_to_database = async () => {
             const fetched_data = await mongoose.connection.db.collection("food_items")
             const a = await fetched_data.find({}).toArray()
             global.food_items = a
-            console.log({ food_items: a })
+            // console.log({ food_items: a })
             try {
                 const foodCategory = await mongoose.connection.db.collection("foodCategory");
                 const fc = await foodCategory.find({}).toArray()
                 global.foodCategory = fc
-                console.log({ foodCategory: fc })
+                // console.log({ foodCategory: fc })
 
             } catch (error) {
                 console.log(error)
